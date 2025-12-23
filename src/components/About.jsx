@@ -1,6 +1,6 @@
 import React from 'react'
 import profile from '../images/profile.jpg'
-import resume from '../Resume/resume.pdf'
+import resume from '../Resume/Dhinagaran_S_Frontend_Developer_Resume_2.pdf'
 
 const About = () => {
     return (
