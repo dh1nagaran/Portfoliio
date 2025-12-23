@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import style from '../images/Stylesphere.png'
-import coffee from '../images/coffee.png'
-import smart from '../images/smartphone.png'
+import style from '../images/fashion.jpg'
+import coffee from '../images/coffee.jpg'
+import smart from '../images/mobile.jpg'
+import zap from '../images/elect.jpg'
+import { useNavigate } from "react-router-dom";
 
 
 const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    let navigate = useNavigate()
 
     const data = [
         {
@@ -23,49 +26,36 @@ const Projects = () => {
             image: smart,
             url: "https://smartphone-store1.netlify.app/"
         },
+        {
+            name: "Zapster",
+            image: zap,
+            url: "https://zapsterr.netlify.app/"
+
+        },
     ];
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % data.length);
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [data.length]);
-
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % data.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + data.length) % data.length);
-    };
-
     return (
-        <div className="projects-section" id="projects">
-            <div>
-                <h2 className="title">My Projects</h2>
+        <div className="w-full m-20 justify-self-center">
+            <div className="project-contain">
+                <h1>Projects</h1>
             </div>
-            <div className="slider-container">
-                <button className="nav-btn left" onClick={prevSlide}>❮</button>
-                <div className="slide">
-                    <img src={data[currentIndex].image} alt={data[currentIndex].name} />
-                    <h3>{data[currentIndex].name}</h3>
-                    <a href={data[currentIndex].url} target="_blank" rel="noopener noreferrer">
-                        Visit Project
-                    </a>
+            <div className="main-project">
+                <div className="project">
+
+                    {
+                        data.map((datas, id) => (
+                            <div className="project-sec">
+
+                                <div className="project-sec-1">
+                                    <img src={datas.image} />
+                                    <h1>{datas.name}</h1>
+                                    <h2><a href={datas.url}>View Project </a></h2>
+                                </div>
+                            </div>
+                        ))
+                    }
+
+
                 </div>
-
-                <button className="nav-btn right" onClick={nextSlide}>❯</button>
-            </div>
-
-            <div className="dots">
-                {data.map((_, index) => (
-                    <span
-                        key={index}
-                        className={index === currentIndex ? "dot active" : "dot"}
-                        onClick={() => setCurrentIndex(index)}
-                    ></span>
-                ))}
             </div>
         </div>
     );
