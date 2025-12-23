@@ -34,7 +34,7 @@ const Projects = () => {
         },
     ];
     return (
-        <div className="w-full m-20 justify-self-center">
+        <div className="w-full m-20 justify-self-center" id="projects">
             <div className="project-contain">
                 <h1>Projects</h1>
             </div>
@@ -62,3 +62,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
