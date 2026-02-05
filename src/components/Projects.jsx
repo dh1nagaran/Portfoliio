@@ -12,6 +12,12 @@ const Projects = () => {
 
     const data = [
         {
+            name: "Zapster",
+            image: zap,
+            url: "https://zapsterr.netlify.app/"
+
+        },
+        {
             name: "StyleSphere",
             image: style,
             url: "https://styles-sphere.netlify.app/"
@@ -20,18 +26,8 @@ const Projects = () => {
             name: "The Coffee Nook",
             image: coffee,
             url: "https://the-coffee-nookk.netlify.app"
-        },
-        {
-            name: "Smartphone Store",
-            image: smart,
-            url: "https://smartphone-store1.netlify.app/"
-        },
-        {
-            name: "Zapster",
-            image: zap,
-            url: "https://zapsterr.netlify.app/"
-
-        },
+        }
+        
     ];
     return (
         <div className="w-full m-20 justify-self-center" id="projects">
@@ -62,4 +58,5 @@ const Projects = () => {
 };
 
 export default Projects;
+
 
